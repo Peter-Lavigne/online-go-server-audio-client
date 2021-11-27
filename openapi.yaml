@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Online Go Server REST API
+
+servers:
+  - url: https://online-go.com/api/v1
+  - url: https://beta.online-go.com/api/v1
+
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: /oauth2/authorize
+          scopes: {}
+
+security: 
+  - oauth2: []
+
+paths:
+  /me:
+    get:
+      responses:
+        '200':
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - username
+                  - id
+                properties:
+                  username:
+                    type: string
+                  id:
+                    type: integer
+  /ui/config:
+    get:
+      responses:
+        '200':
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - chat_auth
+                  - user_jwt
+                  - user
+                properties:
+                  chat_auth:
+                    type: string
+                  user_jwt:
+                    type: string
+                  user:
+                    type: object
+                    required:
+                      - username
+                      - id
+                    properties:
+                      username:
+                        type: string
+                      id:
+                        type: integer
