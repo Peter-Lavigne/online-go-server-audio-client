@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "https://beta.online-go.com/api/v1".replace(/\/+$/, "");
+export const BASE_PATH = "https://online-go.com/api/v1".replace(/\/+$/, "");
 
 const isBlob = (value: any) => typeof Blob !== 'undefined' && value instanceof Blob;
 

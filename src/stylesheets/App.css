@@ -9,3 +9,32 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+a {
+  color: white;
+}
+
+button {
+  margin-top: 1em;
+  padding: 1em;
+  font-size: calc(10px + 2vmin);
+  width: 60%;
+}
+
+input {
+  font-size: calc(10px + 2vmin);
+  width: 60%;
+}
+
+li {
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+ul {
+  padding-left: 0
+}
+
+p {
+  width: 40%;
+}

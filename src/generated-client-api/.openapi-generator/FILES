@@ -1,7 +1,11 @@
 apis/DefaultApi.ts
 apis/index.ts
 index.ts
+models/ChallengesGame.ts
+models/ChallengesGameTimeControlParameters.ts
+models/InlineObject.ts
 models/InlineResponse200.ts
 models/InlineResponse2001.ts
+models/InlineResponse2002.ts
 models/index.ts
 runtime.ts

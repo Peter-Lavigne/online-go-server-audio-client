@@ -37,6 +37,29 @@ paths:
                     type: string
                   id:
                     type: integer
+  /me/challenges/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - username
+                  - id
+                properties:
+                  username:
+                    type: string
+                  id:
+                    type: integer
   /ui/config:
     get:
       responses:
@@ -65,3 +88,111 @@ paths:
                         type: string
                       id:
                         type: integer
+  /challenges:
+    post:
+      responses:
+        '200':
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - challenge
+                  - game
+                  - status
+                properties:
+                  challenge:
+                    type: number
+                  game:
+                    type: number
+                  status:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - initialized
+                - min_ranking
+                - max_ranking
+                - challenger_color
+                - aga_ranked
+                - game
+              properties:
+                initialized:
+                  type: boolean
+                min_ranking:
+                  type: integer
+                max_ranking:
+                  type: integer
+                challenger_color:
+                  type: string
+                aga_ranked:
+                  type: boolean
+                game:
+                  type: object
+                  required:
+                    - name
+                    - rules
+                    - ranked
+                    - width
+                    - height
+                    - handicap
+                    - komi_auto
+                    - komi
+                    - disable_analysis
+                    - initial_state
+                    - private
+                    - time_control
+                    - pause_on_weekends
+                    - time_control_parameters
+                  properties:
+                    name:
+                      type: string
+                    rules:
+                      type: string
+                    ranked:
+                      type: boolean
+                    width:
+                      type: integer
+                    height:
+                      type: integer
+                    handicap:
+                      type: integer
+                    komi_auto:
+                      type: string
+                    komi:
+                      type: number # unknown, value was null
+                      nullable: true
+                    disable_analysis:
+                      type: boolean
+                    initial_state:
+                      type: number # unkown, value was null
+                      nullable: true
+                    private:
+                      type: boolean
+                    time_control:
+                      type: string
+                    pause_on_weekends:
+                      type: boolean
+                    time_control_parameters:
+                      type: object
+                      required:
+                        - system
+                        - speed
+                        - per_move
+                        - pause_on_weekends
+                        - time_control
+                      properties:
+                        system:
+                          type: string
+                        speed:
+                          type: string
+                        per_move:
+                          type: number
+                        pause_on_weekends:
+                          type: boolean
+                        time_control:
+                          type: string
