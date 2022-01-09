@@ -1,4 +1,4 @@
-# Online Go Server Audio Client
+# Online Go Server Voice Client
 
 A client for the [Online Go Server](https://online-go.com) that uses voice input as an interface. I use this to play in my living room while sitting on the couch.
 
